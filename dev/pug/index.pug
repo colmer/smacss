@@ -2,15 +2,39 @@
 html(lang="en")
 head
     meta(charset="UTF-8")
+    link(rel="stylesheet", href="/main.css")
     title Document
 body
     header#header
-        nav.header-nav
-            a.header-nav__item Лента
-            a.header-nav__item Авторы
-            a.header-nav__item Магазин
-            a.header-nav__item Форум
-            a.header-nav__item FAQ
-            a.header-nav__item Партнерская программа
-    main#main Hello World! BFFF
-    footer#footer Footer
+        .container.clearfix
+            nav.main-menu
+                a(href="#").main-menu__item Лента
+                a(href="#").main-menu__item Авторы
+                a(href="#").main-menu__item Магазин
+                a(href="#").main-menu__item Форум
+                a(href="#").main-menu__item FAQ
+                a(href="#").main-menu__item Партнерская программа
+            a(href="#").main-menu__item.main-menu__item-w-icon.l-right
+                <i class="material-icons main-menu__icon">vpn_key</i> Регистрация
+            .login
+                .input
+                    i.material-icons.input__icon person
+                    input.login-input.input__w-icon(type="text" placeholder="Логин")
+                .input
+                    i.material-icons.input__icon lock
+                    input.login-input.input__w-icon(type="password" placeholder="Пароль")
+                button.button.button_green(type="submit") Вход
+
+
+    main#main
+        .info-block
+            image(src='/images/logo.svg')
+            h1.info-block__logo-title Интернет-сервис помощи студентам. Работайте в удобной и дружелюбной системе.
+            .info-block__help Бесплатная служба поддержки
+                .info-block__phone 8 (800) 500-78-57
+        .info-block.info-block_blue.clearfix
+            .container
+                a(href='#').button.l-left Разместить заказ
+                a(href='#').button.l-right Работа для авторов
+    footer#footer
+        .container Footer

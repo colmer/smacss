@@ -1,0 +1,54 @@
+.main-menu
+	float: left
+
+.main-menu__item
+	color: $corp-white
+	display: inline-block
+	padding: 0 15px
+	line-height: 60px
+	font-weight: bold
+	text-decoration: none
+	transition: background-color .3s
+	&:hover
+		background-color: lighten($corp-blue, 5%)
+
+.main-menu__icon
+	font-size: 1.6rem
+	position: relative
+	vertical-align: middle
+	top: -3px
+	transition: 2s
+	margin-right: 10px
+	animation: down-up .6s
+
+.main-menu__item-w-icon
+	position: relative
+	&:hover
+		.main-menu__icon
+			animation: up-down .6s
+
+
+
+
+/* For up-down main-menu_icon animation */
+@keyframes up-down
+    0%
+    	top: -3px
+    33%
+    	top: 50px
+    	opacity: 0
+    34%
+    	top: -50px
+    100%
+    	top: -3px
+
+@keyframes down-up
+    0%
+    	top: -3px
+    33%
+    	top: -50px;
+    	opacity: 0
+    34%
+    	top: 50px
+    100%
+    	top: -3px

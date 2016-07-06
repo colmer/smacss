@@ -23,16 +23,28 @@ gulp.task('pug', function(){
 	.pipe(gulp.dest('./public'));
 });
 
+gulp.task('img', function(){
+	return gulp.src([
+        './dev/images/*'
+	])
+	.pipe(gulp.dest('./public/images'));
+});
+
 // Static Server + watching scss/html files
-gulp.task('serve', ['sass', 'pug'], function() {
+gulp.task('serve', ['sass', 'pug', 'img'], function() {
 
     browserSync.init({
-        server: "./public"
+        server: {
+        	baseDir: "./public",
+        	routes: {
+        		"/bower_components": "bower_components"
+        	}
+        }
     });
 
-    gulp.watch("./dev/sass/*.sass", ['sass']);
+    gulp.watch(["./dev/sass/**/*.sass", "./dev/sass/**/*.scss"], ['sass']);
     gulp.watch("./dev/pug/*.pug", ['pug']);
-    gulp.watch("public/*.html").on('change', browserSync.reload);
+    gulp.watch(["public/*.html", "public/*.css"]).on('change', browserSync.reload);
 });
 
 gulp.task('default', function(callback){

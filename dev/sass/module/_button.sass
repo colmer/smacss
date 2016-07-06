@@ -1,0 +1,17 @@
+.button
+	position: relative
+	top: -1px
+	display: inline-block
+	text-decoration: none
+	font-weight: bold
+	border-radius: 5px
+	color: $corp-white
+	&:hover
+		cursor: pointer
+	&:active
+		top: 0px
+		box-shadow: 0
+
+.button_green
+	background-color: $corp-green
+	@include button-shadow($corp-green)

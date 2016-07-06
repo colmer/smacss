@@ -1,0 +1,9 @@
+/* Make box-shadow  width color */
+@mixin button-shadow($color)
+	box-shadow: 0 2px 0 0 darken($color, 15%)
+	&:hover
+		background-color: lighten($color, 5%)
+	&:active
+		background-color: darken($color, 5%)
+		box-shadow: none
+
