@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 	pug = require('gulp-pug'),
 	browserSync = require('browser-sync').create();
 
-gulp.task('sass', function(){
+gulp.task('sass', function() {
 	return gulp.src([
         './dev/sass/index.sass'
 	])
